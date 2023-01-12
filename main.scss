@@ -47,7 +47,7 @@ body {
     gap: 4px;
     border: $main-color solid;
 
-    .game-container__game-cell {
+    &__game-cell {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -58,12 +58,12 @@ body {
       font-weight: 400;
     }
 
-    .game-container__game-cell:hover {
+    &__game-cell:hover {
       background-color: $secondary-color;
     }
 
     @media (max-width: 725px) {
-      .game-container__game-cell {
+      &__game-cell {
         height: 150px;
         width: 150px;
         font-size: 4rem;
@@ -93,7 +93,7 @@ body {
   transform: translate(-50%, -50%) scale(0);
   transition: 200ms ease-in-out;
 
-  .endgame-modal__message {
+  &__message {
     color: $font-color;
     margin: 10px;
   }
