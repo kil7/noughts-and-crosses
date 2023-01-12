@@ -181,7 +181,11 @@ const gameController = (() => {
   const playRound = (index) => {
     // return if clicked position is already set in board array.
     if (gameBoard.getBoardArray()[index]) return;
+    
+    // set given index in gameBoard array to current player sign.
     gameBoard.updateField(index, getCurrentPlayerSign());
+
+    // check for win or draw conditions, display and update modal message.
     if (checkWinner(gameBoard.getBoardArray())) {
       displayController.displayWinMessage(getCurrentPlayerSign());
       return;
@@ -189,6 +193,9 @@ const gameController = (() => {
     if (round === 9) {
       displayController.displayDrawMessage();
     }
+
+    // increment round so that getCurrentPlayerSign() is the next player
+    // and set message under board to alert next player to move.
     round += 1;
     displayController.setMessageElement(getCurrentPlayerSign());
   };
