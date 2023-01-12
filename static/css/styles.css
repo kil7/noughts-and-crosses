@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: center;
   color: #555555;
-  background-color: #FBF7F0;
+  background-color: #fbf7f0;
 }
 
 .content-container {
@@ -27,25 +27,28 @@ body {
 }
 @media (max-width: 725px) {
   .content-container h1 {
-    font-size: 2.7rem;
+    font-size: 2.6rem;
   }
 }
 .content-container .game-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: #CDC9C3;
+  background-color: #cdc9c3;
   gap: 4px;
-  border: #CDC9C3 solid;
+  border: #cdc9c3 solid;
 }
 .content-container .game-container .game-container__game-cell {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FBF7F0;
+  background-color: #fbf7f0;
   height: 200px;
   width: 200px;
   font-size: 6rem;
   font-weight: 400;
+}
+.content-container .game-container .game-container__game-cell:hover {
+  background-color: #d9e4dd;
 }
 @media (max-width: 725px) {
   .content-container .game-container .game-container__game-cell {
@@ -53,6 +56,60 @@ body {
     width: 150px;
     font-size: 4rem;
   }
+}
+.content-container .message-container {
+  margin-top: 30px;
+  font-size: 2rem;
+}
+
+.endgame-modal {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: #555555;
+  background-color: #cdc9c3;
+  text-align: center;
+  font-size: 2rem;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+}
+.endgame-modal .endgame-modal__message {
+  color: #555555;
+  margin: 10px;
+}
+.endgame-modal .btn-restart {
+  background-color: #fbf7f0;
+  padding: 10px 20px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.endgame-modal .btn-restart:hover {
+  background-color: #d9e4dd;
+}
+
+.endgame-modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.6;
+}
+
+.overlay.active {
+  display: block;
 }
 
 /*# sourceMappingURL=styles.css.map */
