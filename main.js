@@ -13,7 +13,7 @@ const gameBoard = (() => {
   /**
    * Sets the given position in gameArray to the sign of the player for it to
    * be updated to.
-   * 
+   *
    * @param {Number} index position in array to be updated.
    * @param {String} playerSign sign of the player for cell to be updated to
    */
@@ -73,7 +73,7 @@ const displayController = (() => {
 
   /**
    * Updates message DOM element to reflect the turn of the next player.
-   * 
+   *
    * @param {String} playerSign sign of the player to next move.
    */
   const setMessageElement = (playerSign) => {
@@ -91,7 +91,7 @@ const displayController = (() => {
   /**
    * Calls function to display modal and updates the modal message element to
    * reflect the player who has won.
-   * 
+   *
    * @param {String} playerSign Sign of the player who played the last move
    */
   const displayWinMessage = (playerSign) => {
@@ -191,8 +191,6 @@ const gameController = (() => {
     }
     round += 1;
     displayController.setMessageElement(getCurrentPlayerSign());
-
-    
   };
 
   /**
